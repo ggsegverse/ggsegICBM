@@ -10,9 +10,9 @@ knitr::opts_chunk$set(
   comment = "#>",
   fig.path = "man/figures/README-",
   fig.width = 6,
-  out.width = "100%"
+  out.width = "100%",
+  fig.retina = 3
 )
-devtools::load_all(".")
 ```
 
 # ggsegICBM
@@ -20,70 +20,45 @@ devtools::load_all(".")
 <!-- badges: start -->
 [![DOI](https://zenodo.org/badge/250281676.svg)](https://zenodo.org/badge/latestdoi/250281676)
 [![R-CMD-check](https://github.com/ggseg/ggsegICBM/workflows/R-CMD-check/badge.svg)](https://github.com/ggseg/ggsegICBM/actions)
-[![R-CMD-check](https://github.com/ggseg/ggsegICBM/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ggseg/ggsegICBM/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-This package contains dataset for plotting the ICBM white tract atlas ggseg and ggseg3d. 
+Contains the ICBM DTI-81 white matter atlas for the ggseg plotting ecosystem.
 
-Mori et al., MRI Atlas of Human White Matter. Elsevier, Amsterdam, The Netherlands (2005) 
-[pubmed](href{https://www.elsevier.com/books/mri-atlas-of-human-white-matter/mori/978-0-444-51741-8)
+Mori et al., MRI Atlas of Human White Matter. Elsevier, Amsterdam, The Netherlands (2005)
+[Elsevier](https://www.elsevier.com/books/mri-atlas-of-human-white-matter/mori/978-0-444-51741-8)
 
 ## Installation
 
-We recommend installing the ggseg-atlases through the ggseg [r-universe](https://ggseg.r-universe.dev/ui#builds):
-
-```{r eval = FALSE}
-# Enable this universe
-options(repos = c(
-    ggseg = 'https://ggseg.r-universe.dev',
-    CRAN = 'https://cloud.r-project.org'))
-
-# Install some packages
-install.packages('ggsegICBM')
-```
-
-You can install the released version of ggsegICBM from [GitHub](https://github.com/) with:
+You can install ggsegICBM from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("LCBC-UiO/ggsegICBM")
+remotes::install_github("ggseg/ggsegICBM")
 ```
 
 ## Example
+
 ```{r}
 library(ggsegICBM)
 ```
 
-<!-- ```{r, fig.height=10} -->
-<!-- library(ggseg) -->
-
-<!-- ggseg(atlas = icbm, mapping = aes(fill = region)) + -->
-<!--   scale_fill_brain("icbm", package = "ggsegICBM") + -->
-<!--   theme(legend.position = "bottom", -->
-<!--         legend.text = element_text(size = 7)) + -->
-<!--   guides(fill = guide_legend(ncol = 2)) -->
-
-<!-- ``` -->
-
 ```{r "noneval", eval=FALSE}
 library(ggseg3d)
 
-ggseg3d(atlas = icbm_3d) %>% 
-  add_glassbrain("left") %>% 
+ggseg3d(atlas = icbm) |>
   pan_camera("right lateral")
 ```
 
 ```{r "orca", include=FALSE}
 library(ggseg3d)
 
-p <- ggseg3d(atlas = icbm_3d) %>%
-  add_glassbrain("left") %>% 
-  pan_camera("right lateral") %>%
-  plotly::add_annotations( text="Screen capture",
-                  legendtitle=TRUE, showarrow=FALSE,
-                  font = list(color = "#000000b4",
-                              family = 'sans serif',
-                              size = 50))
+p <- ggseg3d(atlas = icbm) |>
+  pan_camera("right lateral") |>
+  plotly::add_annotations(text = "Screen capture",
+                          legendtitle = TRUE, showarrow = FALSE,
+                          font = list(color = "#000000b4",
+                                      family = "sans serif",
+                                      size = 50))
 plotly::orca(p, "man/figures/README-3d-plot.png")
 ```
 
