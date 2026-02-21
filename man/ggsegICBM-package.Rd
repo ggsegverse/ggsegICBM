@@ -11,8 +11,8 @@ ICBM white matter atlas for the 'ggseg' ecosystem. Provides a unified 'ggseg_atl
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/ggseg/ggsegICBM}
-  \item Report bugs at \url{https://github.com/ggseg/ggsegICBM/issues}
+  \item \url{https://github.com/ggsegverse/ggsegICBM}
+  \item Report bugs at \url{https://github.com/ggsegverse/ggsegICBM/issues}
 }
 
 }

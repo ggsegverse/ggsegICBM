@@ -11,6 +11,7 @@
 #' (\href{https://www.elsevier.com/books/mri-atlas-of-human-white-matter/mori/978-0-444-51741-8}{Elsevier})
 #'
 #' @return A [ggseg.formats::ggseg_atlas] object (subcortical).
+#' @import ggseg.formats
 #' @export
 #' @examples
 #' icbm()
