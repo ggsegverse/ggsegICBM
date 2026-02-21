@@ -25,12 +25,8 @@ Suggests:
     rmarkdown,
     testthat (>= 3.0.0),
     vdiffr
-Remotes:
-    ggseg/ggseg,
-    ggseg/ggseg3d,
-    ggseg/ggseg.formats
-URL: https://github.com/ggseg/ggsegICBM
-BugReports: https://github.com/ggseg/ggsegICBM/issues
+URL: https://github.com/ggsegverse/ggsegICBM
+BugReports: https://github.com/ggsegverse/ggsegICBM/issues
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
 Config/testthat/edition: 3
