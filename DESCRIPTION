@@ -14,7 +14,6 @@ Description: ICBM white matter atlas for the 'ggseg' ecosystem. Provides a
     'ggseg3d'.
 License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData: true
 Depends:
     R (>= 3.5),
     ggseg.formats
