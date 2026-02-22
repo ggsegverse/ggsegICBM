@@ -1,10 +1,11 @@
 ---
-output: github_document
+format: gfm
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
+```{r}
+#| include: false
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -39,17 +40,22 @@ remotes::install_github("ggseg/ggsegICBM")
 ## Example
 
 ```{r}
+#| label: chunk-2
 library(ggsegICBM)
 ```
 
-```{r "noneval", eval=FALSE}
+```{r}
+#| label: noneval
+#| eval: false
 library(ggseg3d)
 
 ggseg3d(atlas = icbm()) |>
   pan_camera("right lateral")
 ```
 
-```{r "orca", include=FALSE}
+```{r}
+#| label: orca
+#| include: false
 library(ggseg3d)
 
 p <- ggseg3d(atlas = icbm()) |>
@@ -59,10 +65,12 @@ p <- ggseg3d(atlas = icbm()) |>
                           font = list(color = "#000000b4",
                                       family = "sans serif",
                                       size = 50))
-plotly::orca(p, "man/figures/README-3d-plot.png")
+snapshot_brain("man/figures/README-3d-plot.png")
 ```
 
-```{r "incl", echo=FALSE}
+```{r}
+#| label: incl
+#| echo: false
 knitr::include_graphics("man/figures/README-3d-plot.png")
 ```
 
