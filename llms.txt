@@ -1,32 +1,19 @@
 # ggsegICBM
 
-This package contains dataset for plotting the ICBM white tract atlas
-ggseg and ggseg3d.
+Contains the ICBM DTI-81 white matter atlas for the ggseg plotting
+ecosystem.
 
 Mori et al., MRI Atlas of Human White Matter. Elsevier, Amsterdam, The
-Netherlands (2005) [pubmed](NA)
+Netherlands (2005)
+[Elsevier](https://www.elsevier.com/books/mri-atlas-of-human-white-matter/mori/978-0-444-51741-8)
 
 ## Installation
 
-We recommend installing the ggseg-atlases through the ggseg
-[r-universe](https://ggseg.r-universe.dev/ui#builds):
-
-``` r
-# Enable this universe
-options(repos = c(
-    ggseg = 'https://ggseg.r-universe.dev',
-    CRAN = 'https://cloud.r-project.org'))
-
-# Install some packages
-install.packages('ggsegICBM')
-```
-
-You can install the released version of ggsegICBM from
-[GitHub](https://github.com/) with:
+You can install ggsegICBM from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("LCBC-UiO/ggsegICBM")
+remotes::install_github("ggseg/ggsegICBM")
 ```
 
 ## Example
@@ -38,8 +25,7 @@ library(ggsegICBM)
 ``` r
 library(ggseg3d)
 
-ggseg3d(atlas = icbm_3d) %>% 
-  add_glassbrain("left") %>% 
+ggseg3d(atlas = icbm()) |>
   pan_camera("right lateral")
 ```
 

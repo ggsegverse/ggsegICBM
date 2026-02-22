@@ -61,45 +61,27 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>This package contains dataset for plotting the ICBM white tract atlas ggseg and ggseg3d.</p>
-<p>Mori et al., MRI Atlas of Human White Matter. Elsevier, Amsterdam, The Netherlands (2005) <a href="href%7Bhttps://www.elsevier.com/books/mri-atlas-of-human-white-matter/mori/978-0-444-51741-8" class="external-link">pubmed</a></p>
+<p>Contains the ICBM DTI-81 white matter atlas for the ggseg plotting ecosystem.</p>
+<p>Mori et al., MRI Atlas of Human White Matter. Elsevier, Amsterdam, The Netherlands (2005) <a href="https://www.elsevier.com/books/mri-atlas-of-human-white-matter/mori/978-0-444-51741-8" class="external-link">Elsevier</a></p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>We recommend installing the ggseg-atlases through the ggseg <a href="https://ggseg.r-universe.dev/ui#builds" class="external-link">r-universe</a>:</p>
+<p>You can install ggsegICBM from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Enable this universe</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span>repos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
-<span>    ggseg <span class="op">=</span> <span class="st">'https://ggseg.r-universe.dev'</span>,</span>
-<span>    CRAN <span class="op">=</span> <span class="st">'https://cloud.r-project.org'</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Install some packages</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'ggsegICBM'</span><span class="op">)</span></span></code></pre></div>
-<p>You can install the released version of ggsegICBM from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
-<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"LCBC-UiO/ggsegICBM"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"ggseg/ggsegICBM"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ggsegverse/ggsegICBM" class="external-link">ggsegICBM</a></span><span class="op">)</span></span></code></pre></div>
-<!-- ```{r, fig.height=10} -->
-<!-- library(ggseg) -->
-<!-- ggseg(atlas = icbm, mapping = aes(fill = region)) + -->
-<!--   scale_fill_brain("icbm", package = "ggsegICBM") + -->
-<!--   theme(legend.position = "bottom", -->
-<!--         legend.text = element_text(size = 7)) + -->
-<!--   guides(fill = guide_legend(ncol = 2)) -->
-<!-- ``` -->
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ggsegverse/ggseg3d" class="external-link">ggseg3d</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://lcbc-uio.github.io/ggseg3d//reference/ggseg3d.html" class="external-link">ggseg3d</a></span><span class="op">(</span>atlas <span class="op">=</span> <span class="va">icbm_3d</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu"><a href="https://lcbc-uio.github.io/ggseg3d//reference/add_glassbrain.html" class="external-link">add_glassbrain</a></span><span class="op">(</span><span class="st">"left"</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span><span class="fu"><a href="https://lcbc-uio.github.io/ggseg3d//reference/ggseg3d.html" class="external-link">ggseg3d</a></span><span class="op">(</span>atlas <span class="op">=</span> <span class="fu"><a href="reference/icbm.html">icbm</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://lcbc-uio.github.io/ggseg3d//reference/pan_camera.html" class="external-link">pan_camera</a></span><span class="op">(</span><span class="st">"right lateral"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-3d-plot.png" width="100%"></p>
+<p><img src="reference/figures/README-3d-plot.png" style="width:100.0%"></p>
 <p>Please note that the ‘ggsegICBM’ project is released with a <a href="CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
