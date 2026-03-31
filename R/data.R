@@ -5,6 +5,7 @@
 #' geometry is available for this atlas.
 #'
 #' @family ggseg_atlases
+#' @family tract_atlases
 #'
 #' @references Mori et al., MRI Atlas of Human White Matter. Elsevier,
 #' Amsterdam, The Netherlands (2005)
